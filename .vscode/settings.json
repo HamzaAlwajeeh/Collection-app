@@ -1,0 +1,6 @@
+{
+  "cmake.sourceDirectory": "E:/Flutter/test/testing/windows",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always", 
+  }
+}
