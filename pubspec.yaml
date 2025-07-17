@@ -28,27 +28,21 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  crypto: ^3.0.6
+  cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
-  crypto: ^3.0.6
-  # audioplayers: ^4.1.0
-  # vibration: ^1.7.4
-  # url_launcher: ^6.1.7
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.8
+  flutter_bloc: ^9.1.1
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.13.1
 
 flutter_icons:
   android: true
   ios: true
   image_path: "assets/icons/Azkari.png"
-
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -58,7 +52,6 @@ flutter_icons:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
   # The following line ensures that the Material Icons font is
@@ -76,10 +69,8 @@ flutter:
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/to/asset-from-package
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -109,7 +100,5 @@ flutter:
     - family: Monadi
       fonts:
         - asset: assets/fonts/Monadi.ttf
-
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
