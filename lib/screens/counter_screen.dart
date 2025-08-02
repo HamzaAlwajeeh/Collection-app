@@ -13,7 +13,7 @@ class CounterScreen extends StatelessWidget {
       return ElevatedButton(
         onPressed: () {
           BlocProvider.of<CounterCubit>(context)
-              .incrementTeamACounter(num: numOfAdd, team: team);
+              .incrementTeamCounter(num: numOfAdd, team: team);
         },
         child: Text(
           text,
@@ -32,25 +32,16 @@ class CounterScreen extends StatelessWidget {
     });
   }
 
-  int teamAPoints = 0;
-  int teamBPoints = 0;
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<CounterCubit, CounterState>(builder: (context, state) {
-      return Scaffold(
-        appBar: customAppBar(),
-        body: bodyMethod(),
-      );
-    }, listener: (context, state) {
-      if (state is TeamACounterIncrement) {
-        teamAPoints = BlocProvider.of<CounterCubit>(context).teamACounter;
-      } else if (state is TeamBCounterIncrement) {
-        teamBPoints = BlocProvider.of<CounterCubit>(context).teamBCounter;
-      } else {
-        teamAPoints = 0;
-        teamBPoints = 0;
-      }
-    });
+    return BlocConsumer<CounterCubit, CounterState>(
+        builder: (context, state) {
+          return Scaffold(
+            appBar: customAppBar(),
+            body: bodyMethod(),
+          );
+        },
+        listener: (context, state) {});
   }
 
   Column bodyMethod() {
@@ -116,13 +107,15 @@ class CounterScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
               fontFamily: 'Pacifico'),
         ),
-        Text(
-          '$teamAPoints',
-          style: const TextStyle(
-              fontSize: 90,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Pacifico'),
-        ),
+        Builder(builder: (context) {
+          return Text(
+            '${BlocProvider.of<CounterCubit>(context).teamACounter}',
+            style: const TextStyle(
+                fontSize: 90,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Pacifico'),
+          );
+        }),
         const SizedBox(height: 20, width: 0),
         SizedBox(
           width: 150,
@@ -158,13 +151,15 @@ class CounterScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
               fontFamily: 'Pacifico'),
         ),
-        Text(
-          '$teamBPoints',
-          style: const TextStyle(
-              fontSize: 90,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Pacifico'),
-        ),
+        Builder(builder: (context) {
+          return Text(
+            '${BlocProvider.of<CounterCubit>(context).teamBCounter}',
+            style: const TextStyle(
+                fontSize: 90,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Pacifico'),
+          );
+        }),
         const SizedBox(height: 20.0, width: 0.0),
         SizedBox(
           width: 150,
