@@ -32,8 +32,8 @@ class CounterScreen extends StatelessWidget {
     });
   }
 
-  late int teamAPoints;
-  late int teamBPoints;
+  int teamAPoints = 0;
+  int teamBPoints = 0;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<CounterCubit, CounterState>(builder: (context, state) {
